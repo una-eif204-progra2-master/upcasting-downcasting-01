@@ -1,2 +1,2 @@
-# Base Template Advance
-Base template for repositories of C++
+# Design Pattern: Structural - Decorator
+

@@ -8,8 +8,7 @@
 #include <iostream>
 #include "PhysicalProduct.h"
 #include "DigitalProduct.h"
-#include "SeasonProduct.h"
-#include "VipProduct.h"
+#include "ProductManager.h"
 
 using namespace std;
 
@@ -32,9 +31,24 @@ int main() {
         digitalProduct.setPrice(randomNumberV2);
         digitalProduct.setFilePath("My Docu");
 
-        cout << "Physical Product               > " << physicalProduct << endl;
-        cout << "Digital Product                > " << digitalProduct << endl;
+        Product* product;
 
+        // Implicit Upcasting
+        product = &physicalProduct;
+        cout << "UPCASTING..........> PROPERTY" << endl;
+        cout << "Upcasting          > " << product->getName() << endl;
+
+        // Upcasting with Methods
+        ProductManager* productManager;
+        cout << "UPCASTING..........> METHOD" << endl;
+        productManager->showProductNames(&physicalProduct);
+        productManager->showProductNames(&digitalProduct);
+        cout  << endl;
+
+        // Explicit downcasting from Product to Manager
+        PhysicalProduct* physicalProduct2 = (PhysicalProduct*) (product);
+        cout << "DOWNCASTING........> PROPERTY" << endl;
+        cout << "Downcasting        > " << physicalProduct2->getName() << endl;
 
     } catch (exception& ex) {
         cerr << ex.what() << '\n' << std::endl;

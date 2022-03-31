@@ -29,6 +29,8 @@ public:
 
     void setPrice(double price);
 
+    virtual void foo();
+
     friend ostream &operator<<(ostream &os, const Product &product);
 
     virtual string toString() const;

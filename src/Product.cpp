@@ -45,3 +45,7 @@ string Product::toString() const {
     ss << (*this);
     return ss.str();
 }
+
+void Product::foo() {
+
+}

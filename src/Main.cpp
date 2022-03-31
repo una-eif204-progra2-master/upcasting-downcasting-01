@@ -50,22 +50,24 @@ int main() {
         cout << "DOWNCASTING........> PROPERTY" << endl;
         cout << "Downcasting        > " << physicalProduct2->getName() << endl;
         cout  << endl;
-        
+
         // Dynamic Cast
         Product product2;
         product2.setName("Resident Evil");
         product2.setPrice(100);
 
-        cout << "DYNAMIC-CASTING...." << endl;
+        cout << "DYNAMIC-CASTING....." << endl;
         DigitalProduct* digitalProduct2 = dynamic_cast<DigitalProduct*> (&product2);
         if (digitalProduct2)
             cout << digitalProduct2->getName() << endl;
         else
-            cout << "Can't  cast from Product to Digital Product" << endl;
+            cout << "Can't cast from Product to Digital Product" << endl;
 
         Product* product3 = &physicalProduct;
         productManager->showProductNamesWithDC(product3);
 
+        Product* product4 = &digitalProduct;
+        productManager->showProductNamesWithDC(product4);
 
     } catch (exception& ex) {
         cerr << ex.what() << '\n' << std::endl;

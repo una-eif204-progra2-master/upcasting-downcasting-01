@@ -16,9 +16,9 @@ void ProductManager::showProductNamesWithDC(Product* product) {
     PhysicalProduct* physicalProduct = dynamic_cast<PhysicalProduct*>(product);
 
     if (digitalProduct)
-        cout << "Product Name       > " << digitalProduct->getName() << endl;
+        cout << "From Product To Digital    > " << digitalProduct->getName() << endl;
     else if (physicalProduct)
-        cout << "Product Name       > " << physicalProduct->getName() << endl;
+        cout << "From Product To Physical   > " << physicalProduct->getName() << endl;
     else
-        cout << "Product Name       > " << product->getName() << endl;
+        cout << "Product                    > " << product->getName() << endl;
 }

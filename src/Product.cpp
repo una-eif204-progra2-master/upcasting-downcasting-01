@@ -47,5 +47,5 @@ string Product::toString() const {
 }
 
 void Product::foo() {
-
+    cout << "Test" << endl;
 }

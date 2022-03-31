@@ -32,6 +32,7 @@ int main() {
         digitalProduct.setFilePath("My Docu");
 
         Product* product;
+        ProductManager* productManager;
 
         // Implicit Upcasting
         product = &physicalProduct;
@@ -39,7 +40,6 @@ int main() {
         cout << "Upcasting          > " << product->getName() << endl;
 
         // Upcasting with Methods
-        ProductManager* productManager;
         cout << "UPCASTING..........> METHOD" << endl;
         productManager->showProductNames(&physicalProduct);
         productManager->showProductNames(&digitalProduct);
@@ -49,17 +49,23 @@ int main() {
         PhysicalProduct* physicalProduct2 = (PhysicalProduct*) (product);
         cout << "DOWNCASTING........> PROPERTY" << endl;
         cout << "Downcasting        > " << physicalProduct2->getName() << endl;
-
+        cout  << endl;
+        
         // Dynamic Cast
         Product product2;
         product2.setName("Resident Evil");
         product2.setPrice(100);
 
+        cout << "DYNAMIC-CASTING...." << endl;
         DigitalProduct* digitalProduct2 = dynamic_cast<DigitalProduct*> (&product2);
         if (digitalProduct2)
             cout << digitalProduct2->getName() << endl;
         else
             cout << "Can't  cast from Product to Digital Product" << endl;
+
+        Product* product3 = &physicalProduct;
+        productManager->showProductNamesWithDC(product3);
+
 
     } catch (exception& ex) {
         cerr << ex.what() << '\n' << std::endl;

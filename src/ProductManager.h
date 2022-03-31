@@ -11,6 +11,7 @@
 class ProductManager {
 public:
     void showProductNames(Product* product);
+    void showProductNamesWithDC(Product* product);
 };
 
 

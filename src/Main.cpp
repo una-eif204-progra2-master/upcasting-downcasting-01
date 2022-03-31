@@ -52,11 +52,12 @@ int main() {
         cout  << endl;
 
         // Dynamic Cast
+        cout << "DYNAMIC-CASTING....." << endl;
+
         Product product2;
         product2.setName("Resident Evil");
         product2.setPrice(100);
 
-        cout << "DYNAMIC-CASTING....." << endl;
         DigitalProduct* digitalProduct2 = dynamic_cast<DigitalProduct*> (&product2);
         if (digitalProduct2)
             cout << digitalProduct2->getName() << endl;
